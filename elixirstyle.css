@@ -1,0 +1,1427 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Antic+Slab&family=EB+Garamond&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+body{
+	font-family:"Montserrat",sans-serif;
+	margin:0;
+	padding:0;
+}
+
+*{
+	box-sizing:border-box;
+}
+
+
+/* welcome popup  */
+
+.welcome-popup{
+	font-family:"Century Gothic", Arial,sans-serif;
+	font-size:0.9375rem;
+	position:fixed;
+	left:0;
+	top:0;
+	display: flex;
+   justify-content: center;
+	width:100%;
+	height:100%;
+	z-index:100;
+	background-color:rgba(0,0,0,0.6);
+	align-items:center;
+	visibility:hidden;
+	opacity:0;
+	transition: all 1s ease;
+}
+
+.welcome-popup.show{
+	visibility:visible;
+	opacity:1;
+}
+
+.welcome-popup .box{
+	z-index:1;
+	background-color:#ffffff;
+	width:29rem;
+	position:absolute;
+	transform:translateX(-50%,-50%);
+	display:flex;
+	flex-wrap:50%;
+	color:black;
+	border:0.37rem double black;
+	border-radius:0.25rem;
+	height:22rem;
+}
+
+.welcome-popup .close1{
+	color:black;
+	position:absolute;
+	right:0.625rem;
+	top:0.3125rem;
+	font-size:1.875rem;
+	cursor:pointer;
+}
+
+.welcome-popup .welcome{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	width:100%;
+	height:90%;
+	position:absolute;
+	bottom:0;
+	margin:auto;
+	align-items:center;
+	
+}
+
+.welcome-popup .span3{
+	font-weight:normal;
+	font-size:1.1875rem;
+	display:block;
+	text-align:center;
+	font-family:"Poppins",sans-serif;
+}	
+
+.span5{
+	display:block;
+	text-align:center;
+}
+
+.span5 button{
+	background-color:white;
+	border:0;
+	height:1.375rem;
+	border-bottom:0.16rem solid #ededed;
+	font-weight:bold;
+	font-size:0.9375rem;
+	//font-family:"century gothic", arial,sans-serif;
+}
+
+.span5 button:hover{
+	//color:#7c6e7f;
+	border-bottom:0.1rem solid black;
+	//font-family:"Montserrat",sans-serif;	
+}
+
+.confirm{
+	font-family:"Poppins",sans-serif;
+	background-color:black;
+	color:white;
+	display:block;
+	margin:auto;
+	border-radius:0.8rem;
+	size:1rem;
+}
+
+.confirm:hover{
+	background-color:#EDEDED;
+	color:black;
+}
+
+.checkout button{
+	visibility:hidden;
+		
+}
+
+
+/* SHOPPING BAG POPUP */
+
+.bag-popup{
+	font-family:"Century Gothic", Arial,sans-serif;
+	font-size:1rem;
+	position:fixed;
+	left:0;
+	top:0;
+	display: flex;
+   justify-content: center;
+	width:100%;
+	height:100%;
+	z-index:100;
+	background-color:rgba(0,0,0,0.5);
+	align-items:center;
+	visibility:hidden;
+	opacity:0;
+	transition: all 1s ease;
+}
+
+.bag-popup.show{
+	visibility:visible;
+	opacity:1;
+}
+
+.bag-popup .box{
+	position:fixed;
+	z-index:1;
+	background-color:#ffffff;
+	width:38rem;
+	transform:translateX(-50%,-50%);
+	max-height:27rem;
+	border:0.37rem double black;
+}
+
+.bag-popup .bag_title{
+	position:sticky;
+	top:0;
+	width:100%;
+	margin:auto 0;
+	text-align:center;
+	background-color:#222222;
+	color:white;
+	border-bottom:0.01rem solid gray;
+	z-index:52;
+}
+
+.box .checkout span{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	font-size:1.4rem;
+	font-family:"poppins",serif;
+	font-weight:500;
+	margin:0.6rem;
+}
+
+.box .checkout{
+	border-top:0.01rem solid gray;
+	position:sticky;
+	display:flex;
+	align-items:flex-end;
+	bottom:0;
+	width:100%;
+	justify-content:space-between;
+	z-index:50;
+	background-color:white;
+}
+
+.checkout button{
+	height:2.2rem;
+	text-align:center;
+	margin:auto 0.5rem;
+}
+
+.bag_products div div{
+	display:flex;
+	justify-content:column;
+}
+
+.bag_products div div{
+	width:100%;
+	padding:0.9375rem;
+	justify-content:space-between;
+}
+.bag_products div div p{
+	display:flex;
+	text-align:center;
+	font-family:"century gothic", arial,sans-serif;
+	text-transform:uppercase;
+	//line-height:0.5rem;
+	font-weight:bold;
+	font-size:0.9rem;
+	color:black;
+	letter-spacing:0.03125rem;
+	justify-content:center;
+	align-items:center;
+	height:11rem;
+	//width:25%;
+	//border:1px solid black;
+	margin:0.7rem;
+}
+
+.bag_products div div span{
+	text-align:center;
+	color:#4d4c5c;
+	text-transform:none;
+	font-weight:normal;
+}
+
+.bag_products .brand div .price{
+	text-align:center;
+	font-family:"century gothic", arial,sans-serif;
+	text-transform:uppercase;
+	line-height:0.5rem;
+	font-weight:bold;
+	font-size:0.875rem;
+	color:black;
+	letter-spacing:0.03125rem;	
+}
+
+.brand_products .brand div .price{
+	text-align:center;
+	font-family:"century gothic", arial,sans-serif;
+	text-transform:uppercase;
+	line-height:0.5rem;
+	font-weight:bold;
+	font-size:0.875rem;
+	color:black;
+	letter-spacing:0.03125rem;	
+}
+
+.bag_products div div img{
+	height:12rem;
+	width:10rem;
+	padding:0;
+	z-index:2;
+}
+
+.bag_products div div div{
+	height:12rem;
+	width:10rem;
+	z-index:2;
+	padding:0;
+}
+
+
+.bag_products div button{
+	display:none;
+}
+
+.bag-popup .close2{
+	float:right;
+	margin-right:0.5rem;
+	font-size:1.5rem;
+	cursor:pointer;
+	z-index:102;
+}
+
+.bag-products div{
+	display:flex;
+	flex-direction:column;
+	width:100%;
+	height:10rem;
+	overflow:hidden;
+}
+
+.bag-popup .box{
+	overflow-x:hidden;
+	overflow-y:auto;
+}
+
+/* login popup */
+
+.login-popup{
+	font-family:"Century Gothic", Arial,sans-serif;
+	font-size:1rem;
+	position:fixed;
+	left:0;
+	top:0;
+	display: flex;
+   justify-content: center;
+	width:100%;
+	height:100%;
+	z-index:100;
+	background-color:rgba(0,0,0,0.6);
+	align-items:center;
+	visibility:hidden;
+	opacity:0;
+	transition: all 1s ease;
+}
+
+.login-popup.show{
+	visibility:visible;
+	opacity:1;
+}
+
+.login-popup .box{
+	z-index:1;
+	background-color:#ffffff;
+	width:33rem;
+	position:absolute;
+	transform:translateX(-50%,-50%);
+	display:flex;
+	height:27rem;
+
+}
+
+.login-popup .box .img-area{
+	flex: 0 0 50%;
+	max-width:50%;
+	position:relative;
+	overflow:hidden;
+	padding:1.9rem;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	z-index:60;
+}
+
+.login-popup .box .img-area .img{
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	background-image:url("images/login3.jpg");
+	background-size:cover;
+	background-position:center;
+	animation: zoomInOut 7s linear infinite;
+}
+
+@keyframes zoomInOut{
+	0%,100%{
+		transform:scale(1);
+	}
+	50%{
+		transform:scale(1.05);
+	}
+}
+
+.login-popup .box .form{
+	flex:0 0 50%;
+	max-width:50%;
+	padding:3.125rem 1.9rem;
+}
+
+.login-popup .box .form h1{
+	color:#000000;
+	font-size:1.8rem;
+	margin:0 0 1.9rem;
+}
+
+.login-popup .box .form .form-control{
+	height:2.5rem;
+	margin-bottom:1.9rem;
+	width:100%;
+	border:none;
+	border:0.0625rem solid #cccccc;
+	font-size:1rem;
+	color:#000000;
+}
+
+.login-popup .box .form label{
+	font-size:1rem;
+	color:#555555;
+}
+
+.login-popup .box .form .btn{
+	width:100%;
+	background:2.5rem;
+	height:2.8125rem;
+	border:none;
+	border-radius:0.625rem;
+	font-size:1rem;
+	text-transform: uppercase;
+	background: linear-gradient(to bottom right,black,#808080);
+	color:#ffffff;
+	cursor:pointer;
+}
+
+.login-popup .box .form .btn:hover{
+		outline:none;
+		background: linear-gradient(to bottom right,#808080,black);
+}
+
+.login-popup .box .form .close{
+	position:absolute;
+	right:0.625rem;
+	top:0.3125rem;
+	font-size:1.8rem;
+	cursor:pointer;
+	z-index:102;
+}
+
+.login-popup .form-control:focus{
+	outline:none;
+}
+
+.login-popup h2{
+	font-family:"Century Gothic", Arial,sans-serif;
+	display:flex;
+	justify-content:center;
+	margin:1.25rem;
+}
+
+#social_sites{
+	background-color:#ededed;
+	height:2rem;
+}
+
+.sn_logos{
+	display:inline-block;
+	padding:0 0.19rem;
+	vertical-align:middle;
+}
+
+.ig_logo{
+	height:1.31rem;
+	width:1.37rem;
+	opacity:0.7;
+}
+
+.ig_logo:hover{
+	opacity:1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*store name and search bar css*/
+
+.boxContainer{
+	width:100%;
+	height:2.375rem;
+	border: 0.0625rem solid #424242;
+	padding:0 0.625rem;
+	border-radius: 3.125rem;
+}
+
+.elementsContainer{
+	width:100%;
+	height:100%;
+	vertical-align:middle;
+}
+
+.search{
+		border:none;
+		height:100%;
+		width:100%;
+		padding:0 .3125rem;
+		font-size:0.875rem;
+		font-weight:500;
+}
+
+.search:focus{
+	outline:none;
+}
+
+/* #store__info .fa{ */
+	/* size:1rem; */
+/* } */
+
+#store_info{
+	margin:0.125rem;
+	position:sticky;
+	top:0.187rem;
+	z-index:50;
+	background-color:#FFFFFF;
+	display: flex;
+	align-items:center;
+	justify-content:space-between;
+	margin:0.375rem 0;
+	
+}
+
+#store_info div{
+	width:20%;
+	align-items:center;
+	margin:0 1.25rem;
+}
+
+#store_info span{
+	color:black;
+	width: content-width;
+	cursor: pointer;
+	//margin: auto 0;
+	float:right;
+	opacity:0.7;
+
+}
+
+#store_info span button{
+	background:white;
+	border:none;
+}
+
+#store_info span i{
+	FONT-SIZE:1.8REM;
+	padding:0 0.10rem;
+	margin: auto 0;
+}
+
+#store_info p{
+	text-align:center;
+		margin: auto 0;
+//	letter-spacing:2px;
+}
+
+
+#store_name{
+	//font-family:Libre-Baskerville,serif;
+	font-size:2.875rem;
+	font-weight:750;
+}
+
+#bar_container{
+	background-color:white;
+	position:sticky;
+	top:0;
+	z-index:30;
+}
+
+#progressbar{
+	height:0.25rem;
+	width:0%;
+	border-radius:0.625rem;
+	background:black;
+	z-index:30;
+}
+
+
+/*navbar css*/
+#navbar{
+	display:flex;
+	flex-direction:column;
+	text-transform:uppercase;
+	//border-bottom:0.0625rem solid black;
+}
+
+nav{
+	margin:0.25rem auto;
+}
+
+nav li{
+	list-style:none;
+	display:inline-block;
+	padding:0 1.87rem;
+	
+}
+.nav_links{
+	text-decoration:none;
+	font-size:0.9rem;
+	color:black;
+	font-family:"Century Gothic", Arial,sans-serif;
+	font-weight:500;
+}
+
+.nav_links:hover{
+	font-weight:700;
+	text-decoration:none;
+	color:black;
+}
+
+.nav_links::after{
+	content: '';
+	display:block;
+	height:0.09375rem;
+	left:50%;
+	bottom:0;
+	background: black;
+	transform: translateX(0%) scaleX(0);
+	-webkit-transform: translateX(0%) scaleX(0);
+	transform-origin:50% 50%;
+	width:100%;
+	-webkit-transition:transform 250ms;
+	transition:transform 250ms;
+}
+
+.nav_links:hover::after{
+	transform: translateX(0%) scaleX(1);
+	-webkit-transform: translateX(0%) scaleX(1);
+
+}
+
+/*HR CSS*/
+
+HR{
+	border-top: 0.0625rem solid #BBBBBB;
+}
+
+/*QUOTE CSS*/
+
+#quote{
+	font-family:"Century Gothic",arial,sans-serif;
+	font-size:1.5625rem;
+	font-weight:300;
+}
+
+/*CONTENT CSS*/
+
+.content{
+	padding:0.3125rem 1.4375rem;
+}
+
+a{
+text-decoration:none;	
+}
+
+
+/* CAROUSEL2 FEATURED PRODUCTS CSS */
+.carousel2, .carousel3 p{
+//font-family: "Poppins",sans-serif;
+}
+	
+.carousel2, .carousel3{
+//background-color:#ededed;
+}	
+.carousel_titles{
+	font-weight:bold;
+	font-size:1.4375rem;
+	//font-family:"Century Gothic",Arial,sans-serif;
+}
+
+.carousel-indicatorr{
+	color:grey;
+}
+
+
+#featured_products{
+	margin:3.75rem;
+}
+
+.featured_img{
+	height:14.375rem;
+	width:12.5rem;
+	VERTICAL-ALIGN:MIDDLE;
+	padding:0.5rem;
+}
+
+
+.carousel button{
+	background-color:white;
+	border:0;
+	height:1.375rem;
+	border-bottom:0.156rem solid #ededed;
+	font-weight:bold;
+	font-size:1rem;
+	//font-family:"century gothic", arial,sans-serif;
+}
+
+.carousel button:hover{
+	//color:#7c6e7f;
+	border-bottom:0.156rem solid black;
+	//font-family:"Montserrat",sans-serif;
+	
+}
+
+.carousel2,.carousel3{
+	text-align:center;
+}
+
+.hover_img{
+	overflow:hidden;
+	height:100%;
+	width:100%;
+}
+
+.product1{
+	margin:auto;
+	padding:0 0.156rem;
+	display:inline-block;
+}
+
+.product1 img:hover{
+	transition: transform 1s;
+	transform: scale(1.10);
+}
+
+.product1 p{
+	line-height:0.7rem;
+	font-family:"century gothic", arial,sans-serif;
+	text-transform:uppercase;
+	line-height:0.5rem;
+	font-weight:bold;
+	font-size:0.875rem;
+	color:black;
+	letter-spacing:0.03125rem;
+}
+
+.products1 button{
+	font-family:"century gothic", arial,sans-serif;
+}
+
+/* CHANEL AND LOUIS VUITTON*/
+
+
+#chanel_louis{
+	display:flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+
+}
+
+#chanel_louis div{
+	width:50%;
+	padding:2.5rem 0.93rem;
+}
+
+#chanel_louis div p{
+	text-align:center;
+	font-family:"Montserrat", serif;
+	//line-height:0.6rem;
+	font-weight:bold;
+	font-size:0.93rem;
+	
+}
+
+
+#chanel_louis div img{
+	height:auto;
+	vertical-align:middle;
+	width:100%;
+	padding:0 0 0.4375rem 0;
+}
+
+
+#chanel_louis video{
+	overflow:none;
+	height:auto;
+	width:100%;
+	display:flex;
+	align-self:center;
+	display:block;
+	margin:auto;
+}
+
+
+
+.chanel_btn, .lv_btn{
+	font-family:"Poppins",sans-serif;
+	background-color:black;
+	color:white;
+	display:block;
+	margin:auto;
+	
+}
+.chanel_btn:hover, .lv_btn:hover{
+	background-color:#EDEDED;
+	color:black;
+}
+
+/* dicover buttons */
+
+#men_women{
+		//background-color:#f5f5f5;
+		padding:1rem 0;
+}
+
+.d_buttons{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	
+}
+
+.discover_btns{
+	font-family:"Poppins",sans-serif;
+	background-color:black;
+	color:white;
+	margin:0.3125rem;
+}
+.discover_btns:hover{
+	background-color:#EDEDED;
+	color:black;
+}
+
+
+/* services */
+
+#services{
+	position:relative;
+	width:100%;
+	font-family:"Montserrat", sans-serif;
+	color:black;
+	margin:5rem 0;
+	word-spacing:0.06125rem;
+}
+
+.services{
+	position:relative;
+	align-items:center;
+	margin:2%;
+	display:flex;
+	flex-direction:row;
+}
+
+
+.services div{
+	padding:0 3.5%;
+	width:40rem;
+
+}	
+
+.services div ul{
+	padding-left:0;
+}
+
+.services li{
+	font-weight:200;
+	font-size:smaller;
+	color:gray;
+	
+}
+
+.services input{
+	border:none;
+	border-bottom:0.0625rem solid gray;
+	font-size:0.875rem;
+	width:84%;
+}
+
+.services button{
+	background-color:white;
+}
+
+.services input:focus{
+	outline:none;
+	border-bottom:0.09375rem solid black;
+}
+
+/* footer */
+
+#footer1{
+	background-color: black;
+	width:100%;
+	color:white;
+	font-family:"Montserrat", sans-serif;
+}
+#footer_divs{
+	display:flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+
+}
+
+.footer_headings{
+	width:15%;
+	margin: 1.5% 2.5%;
+}	
+
+.footer_headings h6{
+		font-weight:bold;
+		//line-height:10px;
+}
+
+.footer_headings ul{
+	padding-left:0;
+
+}
+
+.footer_headings a{
+	color:white;
+	font-weight:200;
+	font-size:small;
+	color:gray;
+	
+}
+
+/* -----------------------------------------------BRAND HTML PAGE--------------------------------------------------*/
+
+#header1{
+	display:flex;
+}
+
+#header1 p{
+	font-size:2.5rem;
+	margin:auto;
+	line-height:3rem;
+}
+
+.brand_buttons{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	width:100%;
+	margin:0;
+}
+
+.brand_buttons button{
+	height:3.75rem;
+	width:8.125rem;
+	background-color:#silver;
+	overflow:hidden;
+	border:0;
+	padding:0.3125rem;
+}
+
+.brand_buttons .button_active{
+//	border-bottom: 2px solid black;
+	background-color:black;
+}
+
+.brand_buttons button img{
+	height:3.75rem;
+	width:8.125rem;
+	object-fit:fill;
+}
+
+.brand_products{
+}
+
+
+.brand_products .brand{
+	display:flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+}
+
+.brand_products .brand div{
+	width:25%;
+	padding:0.9375rem;
+}
+.brand_products .brand div p{
+	text-align:center;
+	text-transform:uppercase;
+	color:black;
+	line-height:0.6rem;
+	font-weight:bold;
+	font-size:0.875rem;
+	font-family:"Century Gothic", arial,sans-serif;
+	
+}
+.brand_products .brand div span{
+	text-align:center;
+	color:#4d4c5c;
+	text-transform:none;
+	font-weight:normal;
+}
+
+.brand_products div div img{
+	height:auto;
+	vertical-align:middle;
+	width:100%;
+	padding:0 0 0.4375rem 0;
+	border-bottom:0.25rem solid white;
+}
+
+.brand_products button{
+	background-color:white;
+	border:0;
+	height:1.375rem;
+	border-bottom:0.156rem solid #ededed;
+	font-weight:bold;
+}
+
+.brand_products button:hover{
+	//color:#7c6e7f;
+	border-bottom:0.156rem solid black;
+	
+}
+
+.brand_products img:hover{
+	border-bottom:0.25rem solid black;
+}
+
+.brand_products #lv_products, #dior_products{
+	display:none;
+}
+
+/* -----------------------------------------------MENS COLOGNE HTML PAGE--------------------------------------------------*/
+
+#header1{
+	display:flex;
+}
+
+#header1 p{
+	font-size:2.3125rem;
+	margin:auto;
+	line-height:3rem;
+	font-family:"Century Gothic", Arial, sans-serif;
+}
+
+.mens_products{
+	padding:3.75rem 0 3.75rem 0;
+}	
+
+
+.mens_products .brand video{
+	overflow:none;
+	height:auto;
+	width:100%;
+	display:flex;
+	align-self:center;
+	display:block;
+	margin:auto;
+}
+
+
+.mens_products .brand{
+	display:flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+}
+
+.mens_products .brand div{
+	width:33%;
+	padding:0.9375rem;
+}
+.mens_products .brand div p{
+	text-align:center;
+	font-family:"century gothic", arial,sans-serif;
+	text-transform:uppercase;
+	line-height:0.5rem;
+	font-weight:bold;
+	font-size:0.875rem;
+	color:black;
+	letter-spacing:0.03125rem;
+	
+}
+
+
+
+
+.mens_products .brand div span{
+	text-align:center;
+	color:#4d4c5c;
+	text-transform:none;
+	font-weight:normal;
+}
+
+.mens_products .brand div .price{
+	text-align:center;
+	font-family:"century gothic", arial,sans-serif;
+	text-transform:uppercase;
+	line-height:0.5rem;
+	font-weight:bold;
+	font-size:0.875rem;
+	color:black;
+	letter-spacing:0.03125rem;	
+}
+
+.mens_products img{
+	height:auto;
+	vertical-align:middle;
+	width:100%;
+	padding:0 0 0.3125rem 0;
+	border-bottom:0.25rem solid white;
+}
+
+.mens_products button{
+	background-color:white;
+	border:0;
+	height:1.375rem;
+	border-bottom:0.15625rem solid #ededed;
+	font-weight:bold;
+}
+
+.mens_products button:hover{
+	//color:#7c6e7f;
+	border-bottom:0.15625rem solid black;
+	
+}
+
+.mens_products img:hover{
+	border-bottom:0.25rem solid black;
+}
+
+.descr{
+	padding:0.3125rem;
+	display:block;
+	text-align:center;
+	color:gray;
+
+	font-size:0.84rem;
+}
+
+#header_img{
+	display:block;
+	width:100%;
+	overflow:hidden;
+}
+
+#header_img img{
+	height:auto;
+	width:100%;
+	border-bottom:none;
+}
+
+.sauv_fahr{
+	font-size:1.9rem;
+	font-family:"Century Gothic", Arial, sans-serif;
+	text-align:center;
+}
+
+.mens_products .sauv_fahr p{
+	color:#ededed;
+	font-size:0.9375rem;
+	text-align:center;
+}
+
+.grid{
+	padding:0.3125rem;
+	display:flex;
+	justify-content:space-between;
+}
+
+.grid .fa{
+	color:#bbbbbb;
+}
+
+.grid button{
+	padding:0;
+	margin:0;
+	background-color:white;
+	border:none;
+}
+
+.grid .active{
+	color:black;
+}
+
+/* -----------------------------------------------TESTERS HTML PAGE--------------------------------------------------*/
+
+.testing{
+	
+}
+
+.testing .steps{
+	display:flex;
+	flex-direction:row;
+	align-items:center;
+	width:70%;
+	margin:auto;
+}
+.testing .stepheader{
+	display:flex;
+	flex-direction:row;
+}
+
+.testing .stepheader hr{
+	width:100%;
+	display:inline-block;
+}
+
+.testing .step{
+	display:inline-block;
+	font-size:1.5625rem;
+	font-family:"Century Gothic", Arial, sans-serif;
+	font-weight:bold;
+}
+
+.testing .steps div p{
+	width:100%;
+	padding:0.625rem;
+	//text-align:center;
+	font-size:1rem;
+	font-family:"Montserrat", Arial, sans-serif;
+	font-weight:bold;
+	letter-spacing:0.04375rem;
+	word-spacing:0.04375rem;
+}
+
+.steps div img{
+	padding:0.9375rem;
+	width:13.75rem;
+	height:auto;
+}
+
+
+/* payment gateway */
+
+.content3{
+	      border:0.3rem double #696880;
+		  padding:0.5rem;
+		  background-color:rgba(0,0,0,0,0.6);
+}
+
+.row {
+  display: flexbox; 
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 1.5rem 4rem;
+
+  font-family:"Poppins",sans-serif;
+}
+
+
+.col-50 {
+
+  flex: 50%;
+}
+
+.col-75 {
+ 
+  flex: 40%;
+}
+
+.col-50,
+.col-75 {
+  padding: 0 1rem;
+}
+
+.content3{
+	background-color:#eceae9;
+}
+
+.row {
+  padding: 10px 5px 15px 5px;
+  border-radius: 3px;
+
+}
+
+.row input{
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.row label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.row .icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+
+.btn3 {
+  background-color:black;
+  color: white;
+  padding: 12px;
+  margin: 0.75rem 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+#check{
+	width:2rem;
+}
+
+.btn3:hover {
+  background-color:#424949;
+  color:navyblue;
+}
+
+
+/* Responsive layout*/
+
+@media (max-width: 800px) {
+  .row {
+    flex-direction: column-reverse;
+  }
+}
+
+
+
+
+/*media queries*/
+
+@media (max-width:768px){
+    
+    html{
+        font-size: 70%;
+    }
+	
+	nav li{
+	padding:1rem 0.7rem;
+	}
+	
+	#chanel_louis{
+		display:block;
+	}
+	
+	#chanel_louis div{
+		width:100%;
+		display:block;
+		margin:auto;
+	}
+	
+	.services{
+		display:block;
+
+	}
+	
+	.services div{
+		width:100%;
+		padding:1rem 0;
+	}
+	
+	.brand_products .brand div,.mens_products .brand div{
+	width:50%;
+	padding:0.9375rem;
+	}
+	
+	.mens_products .brand video{
+	overflow:none;
+	height:auto;
+	width:100%;
+	display:flex;
+	align-self:center;
+	display:block;
+	margin:auto;
+	}
+	
+	.grid{
+		display:none;
+	}
+	
+	.featured_img{
+	margin:1rem;
+	height:22rem;
+	width:20rem;
+	VERTICAL-ALIGN:MIDDLE;
+	padding:0.5rem;
+	}
+	
+	#footer1{
+		display:block;
+		margin:auto;
+	}
+	.footer_headings{
+	width:45%;
+	}
+}	
+
+
+
+
+@media (max-width:600px){
+	html{
+		font-size:50%;
+	}
+	
+
+}
+
+@media (max-width:400px){
+	html{
+		font-size:60%;
+	}
+	
+	
+	
+	nav li{
+	padding:1rem 0.3rem;
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

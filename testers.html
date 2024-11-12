@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ELIXIR </title>
+	
+	<!--bootstrap and stylesheet-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<link rel="stylesheet" href="elixirstyle.css">
+	<link rel="stylesheet" href="master.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	
+	
+</head>
+
+<body>
+		
+	<!-- bag popup -->
+	<div class="bag-popup">
+		<div class="box" id="box">
+			
+			<p class="sauv_fahr bag_title">BAG <span class="close2">&times;</span></p>
+				<div class="bag_products">
+					<div class="brand">
+					</div>
+				</div>
+			<div class="checkout"><span>TOTAL: $<span id="total_price">0</span></span> <button class="btn discover_btns" onclick="checkout()">Checkout</div>
+		</div>
+	</div>	
+	<!-- login pop up  -->
+	<div class="login-popup">
+		<div class="box">
+			<div class="img-area">
+			<img class="img">
+			</div>
+			<div class="form">
+				<form>
+				<div class="close">&times;</div>
+				<H2> SIGN UP</H2>
+				
+					<div class="form-group">
+						<input type="text" placeholder="email" id="email" required class="form-control">
+					</div>
+					<div class="form-group">
+						<input type="password" placeholder="password" id="pwd" required class="form-control">
+					</div>
+					<div class="form-group">
+						<label><input type="checkbox"> Remember me</label>
+					</div>
+					<button onclick="validate()" class="btn" id="btn">SIGN UP</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+    <!--container div-->
+	<div id="container" >
+				
+			<!-- progressbar -->
+			<div id="bar_container">
+				<div id="progressbar">
+				</div>
+			</div>
+				
+		    <!--social sites-->
+			<div id="social_sites">
+				<div class="sn_logos"><a href="https://www.instagram.com/"><img src="images\iglogo.png" class="ig_logo"></a></div>
+				<div class="sn_logos"><a href="https://www.twitter.com/"><img src="images\twitterlogo.png" class="ig_logo"></a></div>
+				<div class="sn_logos"><a href="https://www.facebook.com/"><img src="images\fblogo.jpeg" class="ig_logo"></a></div>
+			</div>
+		
+			<!--store info-->
+			<div id="store_info">
+				
+				
+				<!-- search box -->
+				<div class="boxContainer">
+					<table class="elementsContainer">
+						<tr>
+							<td>
+								<input type="text" placeholder="what are you looking for?" class="search">
+							</td>
+							<td>
+								<a href="#"><i class="fa fa-search"></i>
+								</a>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div>
+				<p id="store_name" align="center">ELIXIR</p>
+				</div>
+				<div>
+					<span>
+						<button data-toggle="tooltip" data-placement="top" title="Shopping bag" onclick="bag()"><i class=" fa fa-shopping-bag"></i>
+						</button>
+						<button data-toggle="tooltip" data-placement="top" title="Sign in" onclick="login()">
+						<i class="fa fa-user"></i></button>
+					</span>
+				</div>
+				
+			</div>
+			
+		
+			<!--navbar-->
+			<div id="navbar">
+				<nav>
+					<li><a class="nav_links" href="index.html">Home</a></li>
+					<li><a class="nav_links" href="menscologne.html">Men's cologne</a></li>
+					<li><a class="nav_links" href="womensfragrance.html">Women's Fragrance</a></li>
+					<li><a class="nav_links" href="testers.html">Testers</a></li>
+					<li><a class="nav_links" href="brands.html">Brands</a></li>
+					
+				</nav>
+			</div>
+			<!--quote-->
+			<hr>
+
+		
+		<!--content div-->
+		<div class="content" >
+				
+				<div id="header1">
+					<p>TESTERS</P>
+				</div>
+				<hr>
+				<div id="header_img">
+						<img src="images\tryit.webp">
+				</div>
+				<hr>
+				
+				<div class="testing">
+							
+						<div class="stepheader" >
+							<p class="step">STEP1</p>
+							<hr>
+						</div>
+						<div class="steps" >
+							<div data-aos="fade-in">
+								<img src="images\step1.webp">
+							</div>
+							<div data-aos="fade-in">
+								<p>
+								1. Choose your La Collection Privée ELIXIR Paris fragrance.
+								</p>
+							</div>
+						</div>
+						<div class="stepheader">
+							<hr>
+							<p class="step">STEP2</p>
+						</div>
+						<div class="steps" >
+						<div data-aos="fade-in">
+								<p>
+								2. Add the fragrance to your cart: a free sample of the same fragrance will automatically be included with your order.
+								</p>
+							</div>
+							<div data-aos="fade-in">
+								<img src="images\step2.webp">
+							</div>
+							
+						</div>
+						
+							
+						<div class="stepheader">
+							<p class="step">STEP3</p>
+							<hr>
+						</div>
+						<div class="steps" >
+							<div data-aos="fade-in">
+								<img src="images\step3.webp">
+							</div >
+							<div data-aos="fade-in">
+								<p>
+								3. Once you have received your order, you can try the sample of your fragrance first. If it does not meet your expectations, you have the option of returning the unopened bottle. You may keep the free sample.
+								</p>
+							</div>
+						</div>
+						
+				</div>
+				<hr>
+				
+				<!-- <div class="grid">
+					<button class="fullview"><i class="fa fa-square fa-2x active"></i></button>
+					<button class="gridview" ><i class="fa fa-th-large fa-2x"></i></button>
+				</div> -->
+				
+				<hr>
+				
+				<!-- testers -->
+				<div class="mens_products testers">
+					<div><p class="sauv_fahr">TESTERS AVAILABLE</div>
+</P>
+					<div class="brand">
+						<div>
+							<img src="images\tester1.jpg"><br><br>
+							<p>AMBRE NUT</p>
+							<p><span>Light Fragrance Mist </span></p>
+							<p><span> Description: Ambery and Floral Notes</span> </p>
+
+							<p>$<span class="price">82</span></p>
+							<p><button>ADD TO BAG</button></p>
+						</div>
+						<div>
+							<img src="images\tester2.webp"><br><br>
+							<p>OUD ROSEWOOD</p>
+							<p><span>LES EXCLUSIFS DE CHANEL</span></p>
+							<p><span> Description:  Raspberry, Sandalwood & Rosewood.
+							</span> </p>
+
+							<p>$<span class="price">350</span></p>
+							<p><button>ADD TO BAG</button></p>
+						</div>
+						
+						<div>
+							<img src="images\tester3.webp"><br><br>
+							<p>OUD ISPAHAN</p>
+							<p><span>LES EXCLUSIFS DE CHANEL</span></p>
+							<p><span> Description : labdanum , rose and Oud.
+							</span> </p>
+
+							<p>$<span class="price">54</span></p>
+							<p><button>ADD TO BAG</button></p>
+						</div>
+
+						<div>
+							<img src="images\tester4.webp"><br><br>
+							<p>Purple oud</p>
+							<p><span>Light Fragrance Mist </span></p>
+							<p><span> Description : Oriental Woody fragrance  </span> </p>
+							<p>$<span class="price">50</span></p>
+							<p><button>ADD TO BAG</button></p>
+						</div>
+						
+						<div>
+							<img src="images\tester5.webp"><br><br>
+							<p>Tobacolor</p>
+							<p><span>LES EXCLUSIFS DE CHANEL</span></p>
+							<p> <span> Description : warm spicy, white floral, musky. </span></p>
+							<p>$<span class="price">70</span></p>
+							<p><button>ADD TO BAG</button></p>
+						</div>
+						</div>
+					</div>
+					
+					
+					
+				
+			
+		</div>
+
+
+		<BR>
+		<hr>
+		
+		
+		<!-- services -->
+		<div id="services">
+			<div class="services">
+				<div>
+					<h6><b>CONTACT AN ADVISOR</b></h6>
+					<ul type="none">
+						<li>Available 24/7.</li>
+						<li>To speak with Customer Care, call <u>1.800.550.0005</u>
+						or use the chat and email services below</li>
+					</ul>
+				</div>
+				<div>
+					<h6><b>NEWSLETTER</b></h6>
+					<ul type="none">
+						<li id="news">Subscribe to receive news and updates from ELIXIR PARIS.</li>
+						<li id="news2"><span><form onsubmit="newsletter()"><input type="email" placeholder="Enter your email address" required><button type="submit">></button></form></span></li>
+					</ul>
+				</div>
+				<div>
+					<h6><b>FEEDBACK</b></h6>
+					<ul type="none">
+						<li id="feedback">Please leave a feedback to help improve the website.</li>
+						
+						<li id="feed2"><span><form onsubmit="feedback()"><input type="textbox" placeholder="Type your feedback here" required><button type="submit">></button></span></li>
+				</div>
+					</ul>
+				</div>
+			
+			</div>
+	    </div>
+	
+	<!-- footer -->
+	<div id="footer1">
+	<p id="store_name" align="center" style="font-family:Montserrat,sans-serif;">ELIXIR</p>
+	<br>
+		<div id="footer_divs">
+			<div class="footer_headings">
+				<h6>EXPLORE ELIXIR</h6>
+				<ul type="none">
+					<li><a href="brands.html">Brands</a></li>
+					<li><a href="womensfragrance.html">Women's fragrances</a></li>
+					<li><a href="menscologne.html">Men's fragrances</a></li>
+				</ul>
+			</div>
+			<div class="footer_headings">
+				<h6>ONLINE SERVICES</h6>
+				<ul type="none">
+					<li><a href="#">Shipping Options</a></li>
+					<li><a href="#">Returns</a></li>
+					<li><a href="#">Care & Services</a></li>
+					<li><a href="#">FAQ</a></li>
+				</ul>
+			</div>
+			<div class="footer_headings">
+				<h6>SOCIAL SITES</h6>
+				<ul type="none">
+					<li><a href="https://www.instagram.com/">Instagram</a></li>
+					<li><a href="https://www.twitter.com/">Twitter</a></li>
+					<li><a href="https://www.facebook.com/">Facebook</a></li>
+					<li><a href="https://www.youtube.com/">Youtube</a></li>
+				</ul>
+			</div>
+			<div class="footer_headings">
+				<h6>ELIXIR PARIS</h6>
+				<ul type="none">
+					<li><a href="#">Legal</a></li>
+					<li><a href="#">Privacy</a></li>
+					<li><a href="#">Report to Society</a></li>
+
+				</ul>
+			</div>
+			<div class="footer_headings">
+				<h6>EXPLORE ELIXIR</h6>
+				<ul type="none">
+					<li><a href="brands.html">Brands</a></li>
+					<li><a href="womensfragrance.html">Women's fragrances</a></li>
+					<li><a href="menscologne.html">Men's fragrances</a></li>
+				</ul>
+			</div>
+		</div>
+		<br>
+	</div>
+		
+    <!--scripting and bootstrap js-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="elixir.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script>
+  AOS.init();
+  
+  AOS.init({
+	  duration:600
+  });
+  
+</script>
+</body>
+</html>

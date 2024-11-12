@@ -1,0 +1,17 @@
+{
+  "name": "elixir-perfume-website-main",
+  "version": "1.0.0",
+  "main": "elixir.js",
+  "scripts": {
+    "start": "node elixir.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@material-ui/core": "^4.12.4",
+    "react-router-dom": "^6.22.3"
+  },
+  "devDependencies": {},
+  "description": ""
+}

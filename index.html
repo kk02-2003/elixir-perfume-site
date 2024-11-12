@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ELIXIR </title>
+	
+	<!--bootstrap and stylesheet-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<link rel="stylesheet" href="elixirstyle.css">
+	<link rel="stylesheet" href="master.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+</head>
+
+<body>
+	
+	
+	
+	<div class="welcome-popup">
+		<div class="box">
+			<div class="close1">&times;</div>
+			<div class="welcome">
+			
+				<p><span class="sauv_fahr">Welcome to ELIXIR </span>
+				<span class ="descr">Worlds' best perfume website</span>
+				<br>
+				<span class="span3">You are visiting us from <span id="span4">Canada</span>.</span><br><br>
+				<span class="span5">
+				Another country?
+				
+				<select id="country">
+					<option selected>Canada</option>
+					
+					<option>USA</option>
+					
+				</select>
+				<button id="update" onclick="update()">Update</button>
+				</span>
+				<br>
+				<button class="btn confirm">Confirm</button>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	
+	<div class="bag-popup">
+		<div class="box" id="box">
+			
+			<p class="sauv_fahr bag_title"> BAG <span class="close2">&times;</span></p>
+				<div class="bag_products">
+					<div class="brand">
+					</div>
+				</div>
+			<div class="checkout"><span>TOTAL: $<span id="total_price">0</span></span> <button class="btn discover_btns" onclick="checkout()">Checkout</button></div>
+		</div>
+	</div>
+
+
+
+	<div class="login-popup">
+		<div class="box">
+			<div class="img-area">
+			<img class="img">
+			</div>
+			<div class="form">
+				<form>
+				<div class="close">&times;</div>
+				<H2> SIGN UP</H2>
+				
+					<div class="form-group">
+						<input type="text" placeholder="email" id="email" required class="form-control">
+					</div>
+					<div class="form-group">
+						<input type="password" id="pwd" placeholder="password" required class="form-control">
+					</div>
+					<div class="form-group">
+						<label><input type="checkbox"> Remember me</label>
+					</div>
+					<button class="btn" id="btn" onclick="validate()">SIGN UP</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+
+    <!--container div-->
+	<div id="container">
+			
+			<!-- progressbar -->
+			<div id="bar_container">
+				<div id="progressbar">
+				</div>
+			</div>
+			
+		    <!--social sites-->
+			<div id="social_sites">
+				<div class="sn_logos"><a href="https://www.instagram.com/"><img src="images\iglogo.png" class="ig_logo"></a></div>
+				<div class="sn_logos"><a href="https://www.twitter.com/"><img src="images\twitterlogo.png" class="ig_logo"></a></div>
+				<div class="sn_logos"><a href="https://www.facebook.com/"><img src="images\fblogo.jpeg" class="ig_logo"></a></div>
+			</div>
+		
+			<!--store info-->
+			<div id="store_info">
+				<!-- search box -->
+				<div class="boxContainer">
+					<table class="elementsContainer">
+						<tr>
+							<td>
+								<input type="text" placeholder="what are you looking for?" class="search">
+							</td>
+							<td>
+								<a href="#"><i class="fa fa-search"></i>
+								</a>
+							</td>
+							
+						</tr>
+					</table>
+				</div>
+				<div>
+				<p id="store_name" align="center">ELIXIR</p>
+				</div>
+				<div>
+				<span>
+					<button>
+						<i class=" fa fa-shopping-bag"data-toggle="tooltip" data-placement="top" title="Shopping Bag" onclick="bag()"></i>
+					</button>
+					<button  data-toggle="tooltip" data-placement="top" title="Sign in" onclick="login()">
+						<i class="fa fa-user"></i>
+					</button>
+				</span>
+				</div>
+			
+			</div>
+		
+			<!--navbar-->
+			<div id="navbar">
+				<nav>
+					<li><a class="nav_links" href="index.html">Home</a></li>
+					<li><a class="nav_links" href="menscologne.html">Men's cologne</a></li>
+					<li><a class="nav_links" href="womensfragrance.html">Women's Fragrance</a></li>
+					<li><a class="nav_links" href="testers.html">Testers</a></li>
+					<li><a class="nav_links" href="brands.html">Brands</a></li>
+				</nav>
+			</div>
+			<!--quote-->
+			<hr>
+				<div id="quote" align="center">SCENT IS YOUR OWN STORY, YOU CHOOSE HOW IT IS TOLD</DIV>
+			<hr>
+
+		<!--content div-->
+		<div class="content" >
+		
+			<!--ads carousel-->
+			<div id="carouselExampleIndicators" class="carousel slide carousel1" data-ride="carousel">
+				<ol class="carousel-indicators">
+					<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+					<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+					<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+				</ol>
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<img class="d-block w-100 c_images" src="images\diorhomme.jpg" alt="First slide">
+					</div>
+					<div class="carousel-item">
+						<img class="d-block w-100 c_images" src="images\carousell1.jpg" alt="Second slide">
+					</div>
+					<div class="carousel-item">
+						<img class="d-block w-100 c_images" src="images\carousell3.jpg" alt="Third slide">
+					</div>
+				</div>
+				<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div>
+			
+			<!-- featured products -->
+			<div id="featured_products" >
+			<div id="carouselExampleIndicators1" class="carousel carousel2 slide">
+				
+				<p align="center" class="carousel_titles">FEATURED PRODUCTS</p>
+				<div class="carousel-inner">
+					<div class="carousel-item active products1">
+						<div class="product1">
+							<div class="hover_img" data-aos="fade-in" data-toggle="tooltip" data-placement="top" title="Low Intensity">
+								<img class="w-33 featured_img" src="images\dior1.png" alt="First">
+							</div><br>
+							<p>DIOR PARFUM</p>
+							<h6>Spicy, citrusy, & a little smokey </h6>
+							<p>$<span class="price">82</span></p>
+							<button>ADD TO BAG</button>
+							<span></span>
+						</div>
+						<div class="product1">
+						<div class="hover_img" data-aos="fade-in" data-aos="fade-in" data-toggle="tooltip" data-placement="top" title="Low Intensity">
+							<img class="w-33 featured_img" src="images\dior2.jpg" alt="First"></div><br>
+							<p>DIOR PARFUM</p>
+							<h6> Woody Floral   </h6>
+							<p>$<span class="price">92</span></p>
+							<button>ADD TO BAG</button>
+							<span></span>
+						</div>
+						<div class="product1">
+						<div class="hover_img" data-aos="fade-in" data-aos="fade-in" data-toggle="tooltip" data-placement="top" title="High Intensity">
+							<img class="w-33 featured_img" src="images\dior4.jpg" alt="First"></div><br>
+							<p>DIOR PARFUM</p>
+							<h6> Woody & citrusy </h6>
+							<p>$<span class="price">84</span></p>
+							<button>ADD TO BAG</button>
+							<span></span>
+						</div>
+						<div class="product1">
+						<div class="hover_img" data-aos="fade-in" data-aos="fade-in" data-toggle="tooltip" data-placement="top" title="Low Intensity">
+							<img class="w-33 featured_img" src="images\dior6.jpg" alt="First"></div><br>
+							<p>DIOR PARFUM</p>
+							<h6>Musk, Mint & Cedar </h6>
+							<p>$<span class="price">82</span></p>
+							<button>ADD TO BAG</button>
+							<span></span>
+						</div>
+						<!-- <div class="product1"> -->
+						<!-- <div class="hover_img" data-aos="fade-in" data-aos="fade-in" data-aos="fade-in" data-toggle="tooltip" data-placement="top" title="High Intensity">
+							<img class="w-33 featured_img" src="images\dior5.jpg" alt="First"></div><br>
+							<p>DIOR PARFUM</p>
+							<p>$<span class="price">79</span></p>
+							<button>ADD TO BAG</button>
+							<span></span>
+						</div> -->
+<!-- 						
+					</div>	 -->
+					<div class="carousel-item products1">
+						<div class="product1">
+						<div class="hover_img" data-aos="fade-in">
+							<img class="w-33 featured_img" src="images\dior3.jpg" alt="First"></div><br>
+							<p>DIOR PARFUM</p>
+							
+							<p>$<span class="price">82</span></p>
+							<button>ADD TO BAG</button>
+						</div>
+						<div class="product1">
+						<div class="hover_img" data-aos="fade-in">
+							<img class="w-33 featured_img" src="images\dior1.png" alt="First"></div><br>
+							<p>DIOR PARFUM</p>
+							<p>$<span class="price">100</span></p>
+							<button>ADD TO BAG</button>
+						</div>
+						<div class="product1">
+						<div class="hover_img" data-aos="fade-in">
+							<img class="w-33 featured_img" src="images\dior2.jpg" alt="First"></div><br>
+							<p>DIOR PARFUM</p>
+							<p>$<span class="price">85</span></p>
+							<button>ADD TO BAG</button>
+						</div>
+						<div class="product1">
+						<div class="hover_img" data-aos="fade-in">
+							<img class="w-33 featured_img" src="images\dior4.jpg" alt="First"></div><br>
+							<p>DIOR PARFUM</p>
+							<p>$<span class="price">75</span></p>
+							<button>ADD TO BAG</button>
+						</div>
+						<div class="product1">
+						<div class="hover_img" data-aos="fade-in">
+							<img class="w-33 featured_img" src="images\dior5.jpg" alt="First"></div><br>
+							<p>Dior parfum</p>
+							<p>$<span class="price">82</span></p>
+							<button>ADD TO BAG</button>
+						</div>
+						
+					</div>
+				<a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="carousel-control-next" href="#carouselExampleIndicators1" role="button" data-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			
+			</div>
+			</div>
+			
+		</div>
+		
+		<!-- new arrivals-->
+			<div id="featured_products">
+			<div id="carouselExampleIndicators2" class="carousel carousel3 slide">
+				<p align="center" class="carousel_titles"> NEW ARRIVALS</p>
+				<div class="carousel-inner">
+					<div class="carousel-item active products1">
+						<div class="product1">
+						<div class="hover_img" data-aos="fade-in">
+							<img class="w-33 featured_img" src="images\p1.jpg" alt="First"></div><br>
+							<p class="product_name">DIOR PARFUM</p>
+							<h6> fruity and citrusy </h6>
+							<p>$<span class="price">82</span></p>
+							<button>ADD TO BAG</button>
+						</div>
+						<div class="product1">
+						<div class="hover_img" data-aos="fade-in">
+							<img class="w-33 featured_img" src="images\p3.jpg" alt="First"></div><br>
+							<p>DIOR PARFUM</p>
+							<h6> Rosemary </h6>
+							<p>$<span class="price">87</span></p>
+							<button>ADD TO BAG</button>
+						</div>
+						<div class="product1">
+						<div class="hover_img"data-aos="fade-in">
+							<img class="w-33 featured_img" src="images\p4.jpg" alt="First"></div><br>
+							<p>DIOR PARFUM</p>
+							<h6> fruity and citrusy </h6>
+							<p>$<span class="price">94</span></p>
+							<button>ADD TO BAG</button>
+						</div>
+						<div class="product1">
+						<div class="hover_img" data-aos="fade-in">
+							<img class="w-33 featured_img" src="images\p5.jpg" alt="First"></div><br>
+							<p>DIOR PARFUM</p>
+							<h6> spicy and citrusy </h6>
+							<p>$<span class="price">82</span></p>
+							<button>ADD TO BAG</button>
+						</div>
+						<div class="product1">
+						<div class="hover_img" data-aos="fade-in">
+							<img class="w-33 featured_img" src="images\p6.jpg" alt="First"></div><br>
+							<p>DIOR PARFUM</p>
+							<h6> Notes of bergamot and lemon</h6>
+							<p>$<span class="price">82</span></p>
+							<button>ADD TO BAG</button>
+						</div>
+					</div>	
+					<div class="carousel-item products1">
+						<div class="product1">
+						<div class="hover_img" data-aos="fade-in">
+							<img class="w-33 featured_img" src="images\p3.jpg" alt="First"></div><br>
+							<p>DIOR PARFUM</p>
+							
+							<p>$<span class="price">82</span></p>
+							<button >ADD TO BAG</button>
+						</div>
+						<div class="product1">
+						<div class="hover_img" data-aos="fade-in">
+							<img class="w-33 featured_img" src="images\p5.jpg" alt="First"></div><br>
+							<p>DIOR PARFUM</p>
+							<p>$<span class="price">82</span></p>
+							<button >ADD TO BAG</button>
+						</div>
+						<div class="product1">
+						<div class="hover_img" data-aos="fade-in">
+							<img class="w-33 featured_img" src="images\p1.jpg" alt="First"></div><br>
+							<p>DIOR PARFUM</p>
+							<p>$<span class="price">82</span></p>
+							<button >ADD TO BAG</button>
+						</div>
+						<div class="product1">
+						<div class="hover_img" data-aos="fade-in">
+							<img class="w-33 featured_img" src="images\p4.jpg" alt="First"></div><br>
+							<p>DIOR PARFUM</p>
+							<p>$<span class="price">82</span></p>
+							<button >ADD TO BAG</button>
+						</div>
+						<div class="product1">
+						<div class="hover_img" data-aos="fade-in">
+							<img class="w-33 featured_img" src="images\p6.jpg" alt="First"></div><br>
+							<p>DIOR PARFUM</p>
+							<p>$<span class="price">82</span></p>
+							<button >ADD TO BAG</button>
+						</div>
+					</div>
+				<a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="carousel-control-next" href="#carouselExampleIndicators2" role="button" data-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			
+			</div>
+			</div>
+			
+		</div>
+		</div>
+		<hr>
+		
+		
+		
+		<!-- Discover men and women fragrance buttons -->
+		
+		<div id="men_women" data-aos="">
+			<div class="d_buttons">
+				<button type="button" class="btn discover_btns" onclick="window.location.href='menscologne.html'">DISCOVER MEN'S FRAGRANCES</a></button>
+				<button class="btn discover_btns" onclick="window.location.href='womensfragrance.html'">DISCOVER WOMEN'S FRAGRANCES</button>
+			</div>
+		</div>
+		
+		
+	
+		<hr>
+		
+		<!-- Discover Chanel -->
+		<div id="chanel_louis" >
+			<BR>
+			<div>
+				<video controls id="video1">
+					<source src="images\chanel1.mp4" type="video/mp4" >
+				</video>
+			</div>
+			<div class="discover_chanel">
+				<img src="images\cocoposter.jpg" id="chanel_poster">
+				<p Align="center"data-aos="fade-in">"A woman who doesn't wear perfume<br> has no future" ~ Coco Chanel</p>
+				<button class="btn chanel_btn" onclick="window.location.href='brands.html'">DISCOVER CHANEL</button>
+			</div>
+			<div class="discover_lv">
+				<img src="images\lvcover.jpeg" id="chanel_poster">
+				<p Align="center" data-aos="fade-in">"Good perfumes dont come from<br> anywhere" ~ Louis Vuitton</p>
+				<button class="btn lv_btn" onclick="window.location.href='brands.html'">DISCOVER LOUIS VUITTON</button>
+			</div>
+			<div>
+				<video controls id="video2">
+					<source src="images\louis.mp4" type="video/mp4" >
+				</video>
+			</div>
+		</div>
+		<hr>
+		
+		
+
+
+	
+		
+	
+		<!--  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+			
+		<!-- services -->
+		<div id="services">
+			<div class="services">
+				<div>
+					<h6><b>CONTACT AN ADVISOR</b></h6>
+					<ul type="none">
+						<li>Available 24/7.</li>
+						<li>To speak with Customer Care, call <u>1.800.550.0005</u>
+						</li>
+					</ul>
+				</div>
+				<div>
+					<h6><b>NEWSLETTER</b></h6>
+					<ul type="none">
+						<li id="news">Subscribe to receive news from ELIXIR.</li>
+						<li id="news2"><span><form onsubmit="newsletter()"><input type="email" placeholder="Enter your email address" required><button type="submit">></button></form></span></li>
+					</ul>
+				</div>
+				<div>
+					<h6><b>FEEDBACK</b></h6>
+					<ul type="none">
+						<li ID="feedback">Please leave a feedback to help improve the website.</li>
+						
+						<li id="feed2"><span><form onsubmit="feedback()" ><input type="textbox" placeholder="Type your feedback here" required><button type="submit">></button></span></li>
+				</div>
+					</ul>
+				</div>
+			
+			</div>
+		
+		
+	<!-- footer -->
+	<div id="footer1">
+	<p id="store_name" align="center" style="font-family:Montserrat,sans-serif;">ELIXIR</p>
+	<br>
+		<div id="footer_divs">
+			<div class="footer_headings">
+				<h6>EXPLORE ELIXIR</h6>
+				<ul type="none">
+					<li><a href="brands.html">Brands</a></li>
+					<li><a href="womensfragrance.html">Women's fragrances</a></li>
+					<li><a href="menscologne.html">Men's fragrances</a></li>
+				</ul>
+			</div>
+			<div class="footer_headings">
+				<h6>ONLINE SERVICES</h6>
+				<ul type="none">
+					<li><a href="#">Shipping Options</a></li>
+					<li><a href="#">Returns</a></li>
+					<li><a href="#">Care & Services</a></li>
+					<li><a href="#">FAQ</a></li>
+				</ul>
+			</div>
+			<div class="footer_headings">
+				<h6>SOCIAL SITES</h6>
+				<ul type="none">
+					<li><a href="https://www.instagram.com/">Instagram</a></li>
+					<li><a href="https://www.twitter.com/">Twitter</a></li>
+					<li><a href="https://www.facebook.com/">Facebook</a></li>
+					<li><a href="https://www.youtube.com/">Youtube</a></li>
+				</ul>
+			</div>
+			<div class="footer_headings">
+				<h6>ELIXIR PARIS</h6>
+				<ul type="none">
+					<li><a href="#">Legal</a></li>
+					<li><a href="#">Privacy</a></li>
+					<li><a href="#">Report to Society</a></li>
+
+				</ul>
+			</div>
+			<div class="footer_headings">
+				<h6>ELIXIR PARIS</h6>
+				<ul type="none">
+					<li><a href="brands.html">Brands</a></li>
+					<li><a href="womensfragrance.html">Women's fragrances</a></li>
+					<li><a href="menscologne.html">Men's fragrances</a></li>
+
+				</ul>
+			</div>
+		</div>
+		<br>
+	</div>
+		
+    <!--scripting and bootstrap js-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="elixir.js"></script>
+	<script src="mainpage.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script>
+  AOS.init();
+  
+  AOS.init({
+	  duration:500
+  });
+  
+</script>
+
+</body>
+
+</html>
